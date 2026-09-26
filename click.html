@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Button Demo</title>
+    
+    <!-- 🎨 CSS Styles (Controls how the page looks) -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f7f6;
+        }
+
+        .container {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🏗️ HTML Structure (The content of the page) -->
+    <div class="container">
+        <h1>Interactive Button</h1>
+        <p>Click the button below to see JavaScript in action!</p>
+        <button onclick="showAlert()">Click Me!</button>
+    </div>
+
+    <!-- ⚡ JavaScript (Controls how the page behaves) -->
+    <script>
+        function showAlert() {
+            alert("Hello! You clicked the button successfully! 🎉");
+        }
+    </script>
+
+</body>
+</html>
