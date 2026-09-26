@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Switcher Demo</title>
+    
+    <!-- 🎨 CSS Styles -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffffff;
+            color: #333333;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        .card {
+            text-align: center;
+            padding: 40px;
+            border: 2px solid #333333;
+            border-radius: 12px;
+            background-color: transparent;
+        }
+
+        button {
+            padding: 12px 28px;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: #ffffff;
+            background-color: #333333;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* 🌙 Dark Mode Styles (Triggered via JavaScript) */
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        body.dark-mode .card {
+            border-color: #ffffff;
+        }
+
+        body.dark-mode button {
+            color: #121212;
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🏗️ HTML Structure -->
+    <div class="card">
+        <h1 id="status-text">Light Mode Active</h1>
+        <p>Click below to toggle the website theme.</p>
+        <button id="theme-btn" onclick="toggleTheme()">Switch to Dark Mode</button>
+    </div>
+
+    <!-- ⚡ JavaScript -->
+    <script>
+        function toggleTheme() {
+            // 1. Grab the body element
+            const bodyElement = document.body;
+            // 2. Grab the text and button elements to update them later
+            const statusText = document.getElementById('status-text');
+            const themeButton = document.getElementById('theme-btn');
+
+            // 3. Toggle the CSS class "dark-mode" on the body
+            bodyElement.classList.toggle('dark-mode');
+
+            // 4. Check if dark mode is active to update the text labels
+            if (bodyElement.classList.contains('dark-mode')) {
+                statusText.innerText = "Dark Mode Active 🌙";
+                themeButton.innerText = "Switch to Light Mode ☀️";
+            } else {
+                statusText.innerText = "Light Mode Active ☀️";
+                themeButton.innerText = "Switch to Dark Mode 🌙";
+            }
+        }
+    </script>
+
+</body>
+</html>
